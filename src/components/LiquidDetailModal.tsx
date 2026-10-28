@@ -84,14 +84,14 @@ export const LiquidDetailModal: React.FC<LiquidDetailModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 overflow-y-auto bg-black/80 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-5 overflow-y-auto bg-black/80 backdrop-blur-md animate-fade-in">
       <div 
-        className="glass-modal rounded-3xl w-full max-w-4xl max-h-[92vh] flex flex-col overflow-hidden shadow-2xl border border-slate-800"
+        className="glass-modal rounded-2xl sm:rounded-3xl w-full max-w-4xl max-h-[92vh] flex flex-col overflow-hidden shadow-2xl border border-slate-800"
         onClick={(e) => e.stopPropagation()}
       >
         
         {/* Modal Top Header */}
-        <div className="relative p-5 sm:p-6 border-b border-slate-800 flex items-start justify-between gap-4 bg-gradient-to-b from-dark-900 to-dark-950">
+        <div className="relative p-4 sm:p-6 border-b border-slate-800 flex items-start justify-between gap-3 bg-gradient-to-b from-dark-900 to-dark-950">
           <div className="flex items-center gap-4">
             {/* Bottle Picture */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shrink-0 flex items-center justify-center shadow-md">

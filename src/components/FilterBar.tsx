@@ -2,8 +2,6 @@ import React from 'react';
 import { 
   Search, 
   X, 
-  SlidersHorizontal, 
-  Sparkles, 
   Flame, 
   Snowflake, 
   Zap, 
@@ -82,19 +80,19 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   };
 
   return (
-    <div className="space-y-4 mb-6">
+    <div className="space-y-3 mb-5">
       {/* Search Input & Selectors Row */}
-      <div className="flex flex-col md:flex-row gap-2.5 sm:gap-3 items-stretch md:items-center">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch">
         
         {/* Search Input */}
-        <div className="relative flex-1">
+        <div className="relative flex-1 min-w-0">
           <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
           <input
             type="text"
             value={filter.searchQuery}
             onChange={handleSearchChange}
             placeholder="Szukaj po smaku, marce, opisie lub sprzęcie..."
-            className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-dark-900/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all shadow-inner"
+            className="w-full pl-9 pr-9 py-2 sm:py-2.5 rounded-xl bg-dark-900/90 border border-slate-800 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all shadow-inner"
           />
           {filter.searchQuery && (
             <button
@@ -107,14 +105,16 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           )}
         </div>
 
-        {/* Reviewer Filter Select */}
-        <div className="flex items-center gap-2">
-          <div className="relative min-w-[160px] flex-1 sm:flex-initial">
-            <User className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-cyan-400 pointer-events-none" />
+        {/* 2 Selects side-by-side (50% each on mobile, auto on desktop) */}
+        <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 shrink-0">
+          
+          {/* Reviewer Filter Select */}
+          <div className="relative min-w-0 sm:w-44">
+            <User className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-cyan-400 pointer-events-none" />
             <select
               value={filter.reviewer}
               onChange={handleReviewerChange}
-              className="w-full pl-8 pr-8 py-2.5 rounded-xl bg-dark-900/90 border border-slate-800 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-cyan-500 appearance-none cursor-pointer"
+              className="w-full pl-7 pr-6 py-2 sm:py-2.5 rounded-xl bg-dark-900/90 border border-slate-800 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-cyan-500 appearance-none cursor-pointer truncate"
             >
               <option value="Wszyscy">Ekipa: Wszyscy</option>
               {availableReviewers.map((name) => (
@@ -123,42 +123,43 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+            <div className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-[10px]">
               ▼
             </div>
           </div>
 
           {/* Sort Select */}
-          <div className="relative min-w-[160px] flex-1 sm:flex-initial">
-            <ArrowUpDown className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-violet-400 pointer-events-none" />
+          <div className="relative min-w-0 sm:w-44">
+            <ArrowUpDown className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-violet-400 pointer-events-none" />
             <select
               value={filter.sortBy}
               onChange={handleSortChange}
-              className="w-full pl-8 pr-8 py-2.5 rounded-xl bg-dark-900/90 border border-slate-800 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-violet-500 appearance-none cursor-pointer"
+              className="w-full pl-7 pr-6 py-2 sm:py-2.5 rounded-xl bg-dark-900/90 border border-slate-800 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-violet-500 appearance-none cursor-pointer truncate"
             >
-              <option value="rating_desc">Najwyższa średnia</option>
+              <option value="rating_desc">Najwyższa ocena</option>
               <option value="reviews_count">Najwięcej ocen</option>
               <option value="newest">Najnowsze</option>
-              <option value="controversial">⚡ Podzielone opinie</option>
-              <option value="coil_friendly">Czysta grzałka</option>
+              <option value="controversial">⚡ Podzielone</option>
+              <option value="coil_friendly">Czysta wata</option>
               <option value="rating_asc">Najniższa ocena</option>
             </select>
-            <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+            <div className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-[10px]">
               ▼
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Flavor Category Horizontal Scrollable Pills */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar text-xs">
+      {/* Flavor Category Horizontal Scrollable Pills (No scrollbar track) */}
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
         {CATEGORIES.map((cat) => {
           const isSelected = filter.category === cat;
           return (
             <button
               key={cat}
               onClick={() => handleCategoryChange(cat)}
-              className={`px-3 py-1.5 rounded-xl font-medium whitespace-nowrap transition-all border ${
+              className={`px-3 py-1.5 rounded-xl font-semibold whitespace-nowrap transition-all border shrink-0 ${
                 isSelected
                   ? 'bg-violet-600 text-white border-violet-500 shadow-md shadow-violet-600/30'
                   : 'bg-dark-900/80 hover:bg-slate-800 text-slate-300 border-slate-800/80 hover:text-white'
@@ -171,12 +172,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
       </div>
 
       {/* Quick Pills (Tylko ADV, Bez Chłodzika, Przyjazne Grzałkom, Kontrowersyjne, Do Zlewu) */}
-      <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-800/50 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-800/50 text-xs">
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="text-slate-500 text-[11px] font-semibold uppercase tracking-wider mr-1 hidden sm:inline">
-            Filtry:
-          </span>
-
           {/* ADV Only */}
           <button
             onClick={() => handleQuickPillChange('adv_only')}
@@ -200,7 +197,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             }`}
           >
             <Snowflake className="w-3 h-3 text-cyan-400" />
-            <span>Bez chłodzika (Zero Ice)</span>
+            <span>Zero chłodu</span>
           </button>
 
           {/* Przyjazne grzałkom */}
@@ -213,7 +210,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             }`}
           >
             <ShieldCheck className="w-3 h-3 text-emerald-400" />
-            <span>Czysta wata (Coil ≥ 4)</span>
+            <span>Czysta wata (≥ 4)</span>
           </button>
 
           {/* Kontrowersyjne */}
@@ -239,19 +236,19 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             }`}
           >
             <Trash2 className="w-3 h-3 text-rose-400" />
-            <span>Czarna lista (Zlew)</span>
+            <span>Czarna lista</span>
           </button>
         </div>
 
         {/* Results counter and reset */}
-        <div className="flex items-center gap-2">
-          <span className="text-slate-400 text-xs">
-            Znaleziono: <strong className="text-white">{totalResults}</strong>
+        <div className="flex items-center gap-2 ml-auto text-xs">
+          <span className="text-slate-400">
+            Wyniki: <strong className="text-white">{totalResults}</strong>
           </span>
           {isAnyFilterActive && (
             <button
               onClick={resetAllFilters}
-              className="text-violet-400 hover:text-violet-300 text-xs font-semibold underline underline-offset-2 ml-1"
+              className="text-violet-400 hover:text-violet-300 font-semibold underline underline-offset-2"
             >
               Resetuj
             </button>

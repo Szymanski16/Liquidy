@@ -56,7 +56,7 @@ export const LiquidCard: React.FC<LiquidCardProps> = ({
   const CoilIcon = coilInfo.icon;
 
   return (
-    <div className="glass-card glass-card-hover rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden group">
+    <div className="glass-card glass-card-hover rounded-2xl p-3 sm:p-4 flex flex-col justify-between relative overflow-hidden group w-full min-w-0">
       
       {/* Top Section: Badges & Header */}
       <div>

@@ -239,7 +239,7 @@ export function App() {
   }, [liquids, filter]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-dark-950 pb-20 sm:pb-8">
+    <div className="min-h-screen flex flex-col bg-dark-950 pb-24 sm:pb-8 overflow-x-hidden w-full max-w-full">
       {/* Toast notifications */}
       <ToastContainer toasts={toasts} onDismiss={handleDismissToast} />
 
@@ -256,7 +256,7 @@ export function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
         
         {/* Banner with top statistics */}
         <StatsOverview

@@ -246,14 +246,14 @@ export const AddLiquidModal: React.FC<AddLiquidModalProps> = ({
   const selectedLiquidObj = liquids.find((l) => l.id === selectedLiquidId);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 overflow-y-auto bg-black/80 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-5 overflow-y-auto bg-black/80 backdrop-blur-md animate-fade-in">
       <div 
-        className="glass-modal rounded-3xl w-full max-w-2xl max-h-[94vh] flex flex-col overflow-hidden shadow-2xl border border-slate-800"
+        className="glass-modal rounded-2xl sm:rounded-3xl w-full max-w-2xl max-h-[94vh] flex flex-col overflow-hidden shadow-2xl border border-slate-800"
         onClick={(e) => e.stopPropagation()}
       >
         
         {/* Header */}
-        <div className="p-5 border-b border-slate-800 flex items-center justify-between bg-dark-900">
+        <div className="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between bg-dark-900">
           <div>
             <h2 className="text-xl font-black text-white flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-violet-400" />
