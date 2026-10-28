@@ -152,6 +152,27 @@ export const DataService = {
         const rawLiquids: Liquid[] = liquidsRes.data || [];
         const rawReviews: Review[] = reviewsRes.data || [];
 
+        // If connected Supabase is brand new and empty, auto-seed with initial data
+        if (rawLiquids.length === 0) {
+          try {
+            await client.from('liquids').insert(INITIAL_LIQUIDS);
+            await client.from('reviews').insert(INITIAL_REVIEWS);
+            return {
+              liquids: INITIAL_LIQUIDS.map((liquid) => {
+                const liquidReviews = INITIAL_REVIEWS.filter((r) => r.liquid_id === liquid.id);
+                return {
+                  ...liquid,
+                  reviews: liquidReviews,
+                  stats: calculateLiquidStats(liquidReviews),
+                };
+              }),
+              isSupabase: true,
+            };
+          } catch (seedErr) {
+            console.warn('Auto-seed to Supabase failed:', seedErr);
+          }
+        }
+
         const liquidsWithReviews: LiquidWithReviews[] = rawLiquids.map((liquid) => {
           const liquidReviews = rawReviews.filter((r) => r.liquid_id === liquid.id);
           return {

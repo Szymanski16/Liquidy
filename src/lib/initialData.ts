@@ -2,7 +2,7 @@ import { Liquid, Review } from '../types';
 
 export const INITIAL_LIQUIDS: Liquid[] = [
   {
-    id: 'l1',
+    id: '10000000-0000-4000-a000-000000000001',
     name: 'Ragnarok Ultimate',
     brand: 'A&L (Aromes et Liquides)',
     type: 'Longfill',
@@ -12,7 +12,7 @@ export const INITIAL_LIQUIDS: Liquid[] = [
     created_at: '2026-09-15T12:00:00Z',
   },
   {
-    id: 'l2',
+    id: '10000000-0000-4000-a000-000000000002',
     name: 'Double Apple',
     brand: 'Dark Line',
     type: 'Gotowy Liquid',
@@ -22,7 +22,7 @@ export const INITIAL_LIQUIDS: Liquid[] = [
     created_at: '2026-09-18T14:30:00Z',
   },
   {
-    id: 'l3',
+    id: '10000000-0000-4000-a000-000000000003',
     name: 'Pinkman',
     brand: 'Vampire Vape',
     type: 'Longfill',
@@ -32,7 +32,7 @@ export const INITIAL_LIQUIDS: Liquid[] = [
     created_at: '2026-09-20T10:15:00Z',
   },
   {
-    id: 'l4',
+    id: '10000000-0000-4000-a000-000000000004',
     name: 'Lemon Tart',
     brand: 'Dinner Lady',
     type: 'Longfill',
@@ -42,7 +42,7 @@ export const INITIAL_LIQUIDS: Liquid[] = [
     created_at: '2026-09-25T16:45:00Z',
   },
   {
-    id: 'l5',
+    id: '10000000-0000-4000-a000-000000000005',
     name: 'Mango Passion Fruit Ice',
     brand: 'Just Juice',
     type: 'Longfill',
@@ -52,7 +52,7 @@ export const INITIAL_LIQUIDS: Liquid[] = [
     created_at: '2026-10-02T11:20:00Z',
   },
   {
-    id: 'l6',
+    id: '10000000-0000-4000-a000-000000000006',
     name: 'Cactus Lime Extra Sour',
     brand: 'Chilled Face',
     type: 'Longfill',
@@ -62,7 +62,7 @@ export const INITIAL_LIQUIDS: Liquid[] = [
     created_at: '2026-10-08T09:00:00Z',
   },
   {
-    id: 'l7',
+    id: '10000000-0000-4000-a000-000000000007',
     name: 'Energy Rush',
     brand: 'Fantos',
     type: 'Longfill',
@@ -72,7 +72,7 @@ export const INITIAL_LIQUIDS: Liquid[] = [
     created_at: '2026-10-12T18:10:00Z',
   },
   {
-    id: 'l8',
+    id: '10000000-0000-4000-a000-000000000008',
     name: 'Don Cristo Original (Cigar)',
     brand: 'PGVG Labs',
     type: 'Własny Samogon / Aromat',
@@ -84,10 +84,10 @@ export const INITIAL_LIQUIDS: Liquid[] = [
 ];
 
 export const INITIAL_REVIEWS: Review[] = [
-  // l1: Ragnarok Ultimate (Consensus Favorite)
+  // 1: Ragnarok Ultimate (Consensus Favorite)
   {
-    id: 'r1',
-    liquid_id: 'l1',
+    id: '20000000-0000-4000-b000-000000000001',
+    liquid_id: '10000000-0000-4000-a000-000000000001',
     reviewer_name: 'Młody',
     overall_rating: 9.5,
     sweetness: 4,
@@ -106,8 +106,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-15T15:20:00Z',
   },
   {
-    id: 'r2',
-    liquid_id: 'l1',
+    id: '20000000-0000-4000-b000-000000000002',
+    liquid_id: '10000000-0000-4000-a000-000000000001',
     reviewer_name: 'Bastek',
     overall_rating: 9.0,
     sweetness: 4,
@@ -126,8 +126,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-16T11:40:00Z',
   },
   {
-    id: 'r3',
-    liquid_id: 'l1',
+    id: '20000000-0000-4000-b000-000000000003',
+    liquid_id: '10000000-0000-4000-a000-000000000001',
     reviewer_name: 'Kosa',
     overall_rating: 9.0,
     sweetness: 3,
@@ -146,10 +146,10 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-17T08:15:00Z',
   },
 
-  // l2: Dark Line Double Apple (Standard fruity, coil killer)
+  // 2: Dark Line Double Apple
   {
-    id: 'r4',
-    liquid_id: 'l2',
+    id: '20000000-0000-4000-b000-000000000004',
+    liquid_id: '10000000-0000-4000-a000-000000000002',
     reviewer_name: 'Bastek',
     overall_rating: 7.0,
     sweetness: 5,
@@ -168,8 +168,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-19T13:00:00Z',
   },
   {
-    id: 'r5',
-    liquid_id: 'l2',
+    id: '20000000-0000-4000-b000-000000000005',
+    liquid_id: '10000000-0000-4000-a000-000000000002',
     reviewer_name: 'Szymon',
     overall_rating: 6.5,
     sweetness: 5,
@@ -188,8 +188,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-20T19:22:00Z',
   },
   {
-    id: 'r6',
-    liquid_id: 'l2',
+    id: '20000000-0000-4000-b000-000000000006',
+    liquid_id: '10000000-0000-4000-a000-000000000002',
     reviewer_name: 'Olo',
     overall_rating: 5.5,
     sweetness: 5,
@@ -208,10 +208,10 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-21T17:10:00Z',
   },
 
-  // l3: Pinkman Vampire Vape
+  // 3: Pinkman Vampire Vape
   {
-    id: 'r7',
-    liquid_id: 'l3',
+    id: '20000000-0000-4000-b000-000000000007',
+    liquid_id: '10000000-0000-4000-a000-000000000003',
     reviewer_name: 'Kosa',
     overall_rating: 8.5,
     sweetness: 3,
@@ -230,8 +230,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-22T10:00:00Z',
   },
   {
-    id: 'r8',
-    liquid_id: 'l3',
+    id: '20000000-0000-4000-b000-000000000008',
+    liquid_id: '10000000-0000-4000-a000-000000000003',
     reviewer_name: 'Młody',
     overall_rating: 8.0,
     sweetness: 3,
@@ -250,8 +250,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-23T14:45:00Z',
   },
   {
-    id: 'r9',
-    liquid_id: 'l3',
+    id: '20000000-0000-4000-b000-000000000009',
+    liquid_id: '10000000-0000-4000-a000-000000000003',
     reviewer_name: 'Szymon',
     overall_rating: 7.5,
     sweetness: 3,
@@ -270,10 +270,10 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-24T18:00:00Z',
   },
 
-  // l4: Dinner Lady Lemon Tart (Controversial!)
+  // 4: Lemon Tart Dinner Lady
   {
-    id: 'r10',
-    liquid_id: 'l4',
+    id: '20000000-0000-4000-b000-000000000010',
+    liquid_id: '10000000-0000-4000-a000-000000000004',
     reviewer_name: 'Szymon',
     overall_rating: 9.5,
     sweetness: 4,
@@ -292,8 +292,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-27T12:00:00Z',
   },
   {
-    id: 'r11',
-    liquid_id: 'l4',
+    id: '20000000-0000-4000-b000-000000000011',
+    liquid_id: '10000000-0000-4000-a000-000000000004',
     reviewer_name: 'Młody',
     overall_rating: 3.5,
     sweetness: 5,
@@ -312,8 +312,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-28T16:30:00Z',
   },
   {
-    id: 'r12',
-    liquid_id: 'l4',
+    id: '20000000-0000-4000-b000-000000000012',
+    liquid_id: '10000000-0000-4000-a000-000000000004',
     reviewer_name: 'Kosa',
     overall_rating: 8.5,
     sweetness: 4,
@@ -332,8 +332,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-09-30T21:10:00Z',
   },
   {
-    id: 'r13',
-    liquid_id: 'l4',
+    id: '20000000-0000-4000-b000-000000000013',
+    liquid_id: '10000000-0000-4000-a000-000000000004',
     reviewer_name: 'Bastek',
     overall_rating: 4.0,
     sweetness: 5,
@@ -352,10 +352,10 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-01T15:00:00Z',
   },
 
-  // l5: Just Juice Mango Passion Fruit Ice
+  // 5: Just Juice Mango Passion Fruit Ice
   {
-    id: 'r14',
-    liquid_id: 'l5',
+    id: '20000000-0000-4000-b000-000000000014',
+    liquid_id: '10000000-0000-4000-a000-000000000005',
     reviewer_name: 'Bastek',
     overall_rating: 9.0,
     sweetness: 4,
@@ -374,8 +374,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-03T14:15:00Z',
   },
   {
-    id: 'r15',
-    liquid_id: 'l5',
+    id: '20000000-0000-4000-b000-000000000015',
+    liquid_id: '10000000-0000-4000-a000-000000000005',
     reviewer_name: 'Młody',
     overall_rating: 8.5,
     sweetness: 3,
@@ -394,8 +394,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-04T18:40:00Z',
   },
   {
-    id: 'r16',
-    liquid_id: 'l5',
+    id: '20000000-0000-4000-b000-000000000016',
+    liquid_id: '10000000-0000-4000-a000-000000000005',
     reviewer_name: 'Krzychu',
     overall_rating: 8.5,
     sweetness: 4,
@@ -414,10 +414,10 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-05T09:30:00Z',
   },
 
-  // l6: Chilled Face Cactus Lime
+  // 6: Chilled Face Cactus Lime
   {
-    id: 'r17',
-    liquid_id: 'l6',
+    id: '20000000-0000-4000-b000-000000000017',
+    liquid_id: '10000000-0000-4000-a000-000000000006',
     reviewer_name: 'Młody',
     overall_rating: 8.5,
     sweetness: 2,
@@ -436,8 +436,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-09T12:00:00Z',
   },
   {
-    id: 'r18',
-    liquid_id: 'l6',
+    id: '20000000-0000-4000-b000-000000000018',
+    liquid_id: '10000000-0000-4000-a000-000000000006',
     reviewer_name: 'Krzychu',
     overall_rating: 8.0,
     sweetness: 2,
@@ -456,10 +456,10 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-10T17:15:00Z',
   },
 
-  // l7: Fantos Energy Rush
+  // 7: Fantos Energy Rush
   {
-    id: 'r19',
-    liquid_id: 'l7',
+    id: '20000000-0000-4000-b000-000000000019',
+    liquid_id: '10000000-0000-4000-a000-000000000007',
     reviewer_name: 'Szymon',
     overall_rating: 7.0,
     sweetness: 5,
@@ -478,8 +478,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-13T16:20:00Z',
   },
   {
-    id: 'r20',
-    liquid_id: 'l7',
+    id: '20000000-0000-4000-b000-000000000020',
+    liquid_id: '10000000-0000-4000-a000-000000000007',
     reviewer_name: 'Bastek',
     overall_rating: 6.0,
     sweetness: 5,
@@ -498,10 +498,10 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-14T22:00:00Z',
   },
 
-  // l8: Don Cristo Original (Controversial: cigar vs ash)
+  // 8: Don Cristo Original
   {
-    id: 'r21',
-    liquid_id: 'l8',
+    id: '20000000-0000-4000-b000-000000000021',
+    liquid_id: '10000000-0000-4000-a000-000000000008',
     reviewer_name: 'Kosa',
     overall_rating: 9.0,
     sweetness: 1,
@@ -520,8 +520,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-16T19:00:00Z',
   },
   {
-    id: 'r22',
-    liquid_id: 'l8',
+    id: '20000000-0000-4000-b000-000000000022',
+    liquid_id: '10000000-0000-4000-a000-000000000008',
     reviewer_name: 'Młody',
     overall_rating: 2.0,
     sweetness: 1,
@@ -540,8 +540,8 @@ export const INITIAL_REVIEWS: Review[] = [
     created_at: '2026-10-17T11:20:00Z',
   },
   {
-    id: 'r23',
-    liquid_id: 'l8',
+    id: '20000000-0000-4000-b000-000000000023',
+    liquid_id: '10000000-0000-4000-a000-000000000008',
     reviewer_name: 'Olo',
     overall_rating: 7.0,
     sweetness: 1,

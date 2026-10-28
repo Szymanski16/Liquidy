@@ -1,5 +1,9 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
+// Hardcoded Default Supabase Credentials (Podłączone na sztywno)
+export const DEFAULT_SUPABASE_URL = 'https://rxliulqkfhhsfdzajlvk.supabase.co';
+export const DEFAULT_SUPABASE_ANON_KEY = 'sb_publishable_Ci50MjPab9Jy1l6579jGKQ_elPCDB3z';
+
 const STORAGE_KEY_URL = 'liquid_reviews_supabase_url';
 const STORAGE_KEY_KEY = 'liquid_reviews_supabase_anon_key';
 
@@ -17,21 +21,16 @@ export function getStoredSupabaseConfig(): SupabaseConfig {
   const envUrl = (import.meta.env.VITE_SUPABASE_URL as string | undefined)?.trim() || '';
   const envKey = (import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined)?.trim() || '';
 
-  if (customUrl && customKey) {
-    return {
-      url: customUrl,
-      anonKey: customKey,
-      isConfigured: true,
-      isCustom: true,
-    };
-  }
+  // Priority: 1. User custom in localStorage -> 2. Environment variables -> 3. Hardcoded defaults
+  const effectiveUrl = customUrl || envUrl || DEFAULT_SUPABASE_URL;
+  const effectiveKey = customKey || envKey || DEFAULT_SUPABASE_ANON_KEY;
 
-  if (envUrl && envKey) {
+  if (effectiveUrl && effectiveKey) {
     return {
-      url: envUrl,
-      anonKey: envKey,
+      url: effectiveUrl,
+      anonKey: effectiveKey,
       isConfigured: true,
-      isCustom: false,
+      isCustom: Boolean(customUrl && customKey),
     };
   }
 
@@ -139,7 +138,7 @@ export async function uploadLiquidImage(fileBlob: Blob, liquidId: string): Promi
       });
 
     if (uploadError) {
-      console.warn('Storage upload error, continuing without cloud storage:', uploadError);
+      console.warn('Storage upload error, continuing with fallback:', uploadError);
       return null;
     }
 
